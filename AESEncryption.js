@@ -34,6 +34,10 @@ AesUtil.prototype.decrypt = function (salt, iv, passPhrase, cipherText) {
 
 let aesUtil = new AesUtil(128, 1000);
 
+//Generated iv and salt
+let iv = CryptoJS.lib.WordArray.random(128 / 8).toString(CryptoJS.enc.Hex);
+let salt = CryptoJS.lib.WordArray.random(128 / 8).toString(CryptoJS.enc.Hex);
+
 //encrypt
 console.log(
   aesUtil.encrypt(
